@@ -1,4 +1,5 @@
 import hashlib
+import binascii
 def to64(v, n):
     ret = ""
     base64 = "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -20,17 +21,19 @@ def main():
     salt = "hfT7jp2q"
 
     res = password + "$1$" + salt
-    #print(res)
-    h=hashlib.md5(res.encode())
+    blah = password + salt + password
+    #print(blah)
+    h=hashlib.md5(blah.encode())
     #print(h.hexdigest())
     h=h.hexdigest()
-    l=len(password)
+    l=len(password)*2
+    #############################################
     #print(l)
     while l > 0:
         res = res + h[0:min(16,l)]
         l = l - 16
+    print(res)
 
-    #print(res)
     #print(hashlib.md5(res.encode()).hexdigest())
     l=len(password)
     while(l != 0):
@@ -46,7 +49,7 @@ def main():
     #print(l)
 
     h = hashlib.md5(res.encode())
-    print(h.hexdigest())
+    #print(h.hexdigest())
     
     for x in range(0,1000):
         tmp = ""
@@ -64,7 +67,7 @@ def main():
             tmp += password
 
         h = hashlib.md5(tmp.encode())
-    print(h.hexdigest())
+    #print(h.hexdigest())
 
     print(finalization(h.digest()))
     
