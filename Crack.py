@@ -78,7 +78,7 @@ def main():
 
                 if expected_hash == result:
                     w = open("result.txt",'w')
-                    w.write(result)
+                    w.write(password)
                     w.close()
                     found_flag = True
                     break
