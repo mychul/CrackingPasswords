@@ -17,59 +17,70 @@ def finalization(h):
 
 def main():
     #initialization
-    password = "zhgnnd"
+    password = "fuqnbm"
+    encoded_pass=password.encode()
     salt = "hfT7jp2q"
+    encoded_salt=salt.encode()
 
     res = password + "$1$" + salt
+    encoded_res=res.encode()
     blah = password + salt + password
+    encoded_blah=blah.encode()
     #print(blah)
-    h=hashlib.md5(blah.encode())
+    h=hashlib.md5(encoded_blah)
+    encoded_h = h.digest()
     #print(h.hexdigest())
-    h=h.hexdigest()
-    l=len(password)*2
+    #h=h.hexdigest()
+    l=len(password) #*2
     #############################################
     #print(l)
     while l > 0:
-        res = res + h[0:min(16,l)]
+        encoded_res = encoded_res + encoded_h[0:min(16,l)]
         l = l - 16
-    print(res)
+    #print(encoded_res)
 
     #print(hashlib.md5(res.encode()).hexdigest())
     l=len(password)
     while(l != 0):
         if l&1:
-            res += '\x00'
+            encoded_res += b'\x00'
             #print("Adding hex nul")
             #print(res)
         else: 
-            res += password[0]
+            encoded_res += password[0].encode()
             #print("Adding first character of pass")
             #print(res)
         l>>=1
     #print(l)
 
-    h = hashlib.md5(res.encode())
+    encoded_h = hashlib.md5(encoded_res).digest()
     #print(h.hexdigest())
     
     for x in range(0,1000):
-        tmp = ""
+        tmp = b''
         if ((x % 2) == 1): 
-            tmp += password
+            tmp += encoded_pass
         else: 
-            tmp += h.hexdigest()
+            tmp += encoded_h
         if ((x % 3) != 0):
-            tmp += salt
+            tmp += encoded_salt
         if ((x % 7) != 0): 
-            tmp += password
-        if (x % 2 == 1): 
-            tmp += h.hexdigest()
+            tmp += encoded_pass
+        if ((x % 2) == 1): 
+            tmp += encoded_h
         else:
-            tmp += password
+            tmp += encoded_pass
 
-        h = hashlib.md5(tmp.encode())
+        encoded_h = hashlib.md5(tmp).digest()
     #print(h.hexdigest())
+    result=finalization(encoded_h)
+    print(result)
 
-    print(finalization(h.digest()))
+    expected_hash= "dP0bggvHqYVcXBNqiVBIT/"
+    print(expected_hash)
+
+    if expected_hash == result:
+        print("YATTA~~~~~!!!!!!!!!!")
     
 
 if __name__ == "__main__":
