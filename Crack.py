@@ -16,6 +16,7 @@ def main():
     found_flag=False
     path = r"C:\Users\Hollow\Desktop\cs165\Project1-CrackingPasswords\CrackingPasswords\Files"
     for filename in os.listdir(path):
+        
         if found_flag==True:
             break
         with open(path+"\\"+filename,'r') as f:
