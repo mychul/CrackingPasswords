@@ -15,7 +15,7 @@ def finalization(h):
     return to64((h[0] << 16) | (h[6] << 8) | (h[12]), 4) + to64((h[1] << 16) | (h[7] << 8) | (h[13]), 4) + to64((h[2] << 16) | (h[8] << 8) | (h[14]), 4) + to64((h[3] << 16) | (h[9] << 8) | (h[15]), 4) + to64((h[4] << 16) | (h[10] << 8) | (h[5]), 4) + to64(h[11], 2)
 
 def crack(id,num,flag):
-    path = r"D:\Colege_Data\UCR DATA FOLDER\Winter 2021_DATA\CS 165\Project 1\DATA"
+    path = r"C:\Users\Hollow\Desktop\cs165\Project1-CrackingPasswords\CrackingPasswords\Files"
     truepath = path+"\\"+ str(id) 
     salt = "4fTgjp6q"
     encoded_salt=salt.encode()
@@ -113,22 +113,22 @@ if __name__ == '__main__':
     first_process = Process(target=crack, args=(1,num,flag))
     second_process = Process(target=crack, args=(2,num,flag))
     third_process = Process(target=crack, args=(3,num,flag))
-    fourth_process = Process(target=crack, args=(4,num,flag))
-    fifth_process = Process(target=crack, args=(5,num,flag))
+    #fourth_process = Process(target=crack, args=(4,num,flag))
+    #fifth_process = Process(target=crack, args=(5,num,flag))
     #sixth_process = Process(target=crack, args=(6,num,flag))
     
     first_process.start()
     second_process.start()
     third_process.start()
-    fourth_process.start()
-    fifth_process.start()
+    #fourth_process.start()
+    #fifth_process.start()
     #sixth_process.start()
     
     first_process.join()
     second_process.join()
     third_process.join()
-    fourth_process.join()
-    fifth_process.join()
+    #fourth_process.join()
+    #fifth_process.join()
     #sixth_process.join()
     
     end = time.time()
