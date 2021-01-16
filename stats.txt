@@ -1,0 +1,27 @@
+AMD Ryzen 3950x 16-Core Procesor
+Total Lines Tried: 49391830 in 6728.158638238907 seconds.
+Process 14 has finished with file in 4744.8118579387665 seconds. Deleting File: x033.txt
+Process 2 has finished with file in 4747.4589059352875 seconds. Deleting File: x010.txt
+Process 22 has finished with file in 4748.922548055649 seconds. Deleting File: x035.txt
+Process 11 has finished with file in 4749.782306432724 seconds. Deleting File: x019.txt
+Process 3 has finished with file in 4750.063999176025 seconds. Deleting File: x011.txt
+Process 6 has finished with file in 4756.752330780029 seconds. Deleting File: x014.txt
+Process 18 has finished with file in 4756.971452474594 seconds. Deleting File: x059.txt
+Process 10 has finished with file in 4765.349778175354 seconds. Deleting File: x018.txt
+Process 23 has finished with file in 4766.493458747864 seconds. Deleting File: x038.txt
+Process 19 has finished with file in 4767.968346834183 seconds. Deleting File: x069.txt
+Process 7 has finished with file in 4778.8349850177765 seconds. Deleting File: x015.txt
+Process 15 has finished with file in 4789.841602802277 seconds. Deleting File: x036.txt
+Process 13 has finished with file in 4790.645373344421 seconds. Deleting File: x032.txt
+Process 1 has finished with file in 4791.226503133774 seconds. Deleting File: x009.txt
+Process 9 has finished with file in 4792.782729625702 seconds. Deleting File: x017.txt
+Process 17 has finished with file in 4796.350550889969 seconds. Deleting File: x055.txt
+Process 12 has finished with file in 4802.015897512436 seconds. Deleting File: x031.txt
+Process 4 has finished with file in 4804.221625804901 seconds. Deleting File: x012.txt
+Process 8 has finished with file in 4804.18418097496 seconds. Deleting File: x016.txt
+Process 20 has finished with file in 4804.324211597443 seconds. Deleting File: x079.txt
+Process 16 has finished with file in 4808.86553812027 seconds. Deleting File: x051.txt
+Process 5 has finished with file in 4813.034551382065 seconds. Deleting File: x013.txt
+Process 12 has found password: ylanou
+6728.158638238907 seconds
+Total Lines Tried: 49391830
