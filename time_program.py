@@ -1,6 +1,6 @@
 import time
 
 start = time.time()
-test = input("Enter something: ")
+test = input("Type Something: ")
 end = time.time()
-print(end - start)
+print(str(end - start) + " seconds")
