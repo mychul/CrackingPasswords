@@ -15,7 +15,7 @@ def finalization(h):
     return to64((h[0] << 16) | (h[6] << 8) | (h[12]), 4) + to64((h[1] << 16) | (h[7] << 8) | (h[13]), 4) + to64((h[2] << 16) | (h[8] << 8) | (h[14]), 4) + to64((h[3] << 16) | (h[9] << 8) | (h[15]), 4) + to64((h[4] << 16) | (h[10] << 8) | (h[5]), 4) + to64(h[11], 2)
 
 def crack(id,num,flag):
-    path = r"C:\Users\Hollow\Desktop\cs165\Project1-CrackingPasswords\CrackingPasswords\Files"
+    path = r"C:\Users\raoul\Documents\GitHub\CrackingPasswords\Files"
     truepath = path+"\\"+ str(id) 
     salt = "4fTgjp6q"
     encoded_salt=salt.encode()
@@ -24,7 +24,7 @@ def crack(id,num,flag):
         start = time.time()
         if flag.value == 1:
             break
-        with open(truepath + "\\" +filename,'r') as f:
+        with open(truepath + "\\" + filename,'r') as f:
             if flag.value == 1:
                 break
             while(True):
@@ -116,6 +116,23 @@ if __name__ == '__main__':
     #fourth_process = Process(target=crack, args=(4,num,flag))
     #fifth_process = Process(target=crack, args=(5,num,flag))
     #sixth_process = Process(target=crack, args=(6,num,flag))
+    #seventh_process = Process(target=crack, args=(7,num,flag))
+    #eigth_process = Process(target=crack, args=(8,num,flag))
+    #nineth_process = Process(target=crack, args=(9,num,flag))
+    #tenth_process = Process(target=crack, args=(10,num,flag))
+    #eleventh_process = Process(target=crack, args=(11,num,flag))
+    #twelve_process = Process(target=crack, args=(12,num,flag))
+    #thirteen_process = Process(target=crack, args=(13,num,flag))
+    #fourteen_process = Process(target=crack, args=(14,num,flag))
+    #fifteen_process = Process(target=crack, args=(15,num,flag))
+    #sixteen_process = Process(target=crack, args=(16,num,flag))
+    #seventeen_process = Process(target=crack, args=(17,num,flag))
+    #eightteen_process = Process(target=crack, args=(18,num,flag))
+    #nineteen_process = Process(target=crack, args=(19,num,flag))
+    #twenty_process = Process(target=crack, args=(20,num,flag))
+    #twentyone_process = Process(target=crack, args=(21,num,flag))
+    #twentytwo_process = Process(target=crack, args=(22,num,flag))
+    #twentythree_process = Process(target=crack, args=(23,num,flag))
     
     first_process.start()
     second_process.start()
@@ -123,6 +140,23 @@ if __name__ == '__main__':
     #fourth_process.start()
     #fifth_process.start()
     #sixth_process.start()
+    #seventh_process.start()
+    #eigth_process.start()
+    #nineth_process.start()
+    #tenth_process.start()
+    #eleventh_process.start()
+    #twelve_process.start()
+    #thirteen_process.start()
+    #fourteen_process.start()
+    #fifteen_process.start()
+    #sixteen_process.start()
+    #seventeen_process.start()
+    #eightteen_process.start()
+    #nineteen_process.start()
+    #twenty_process.start()
+    #twentyone_process.start()
+    #twentytwo_process.start()
+    #twentythree_process.start()
     
     first_process.join()
     second_process.join()
@@ -130,10 +164,27 @@ if __name__ == '__main__':
     #fourth_process.join()
     #fifth_process.join()
     #sixth_process.join()
+    #seventh_process.join()
+    #eigth_process.join()
+    #nineth_process.join()
+    #tenth_process.join()
+    #eleventh_process.join()
+    #twelve_process.join()
+    #thirteen_process.join()
+    #fourteen_process.join()
+    #fifteen_process.join()
+    #sixteen_process.join()
+    #seventeen_process.join()
+    #eightteen_process.join()
+    #nineteen_process.join()
+    #twenty_process.join()
+    #twentyone_process.join()
+    #twentytwo_process.join()
+    #twentythree_process.join()
     
     end = time.time()
     print(str(end - start) + " seconds")
     print("Total Lines Tried: " + str(num.value))
-    w = open(r"D:\Colege_Data\UCR DATA FOLDER\Winter 2021_DATA\CS 165\Project 1\Stats\stats.txt",'a')
+    w = open("stats.txt",'a')
     w.write("Total Lines Tried: " + str(num.value) + " in " + str(end - start) + " seconds.\n")
     w.close()
