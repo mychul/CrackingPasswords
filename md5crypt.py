@@ -16,7 +16,7 @@ def finalization(h):
 
 def main():
     #initialization
-    password = "ilakr"
+    password = "aa"
     encoded_pass=password.encode()
     salt = "4fTgjp6q"
     encoded_salt=salt.encode()
