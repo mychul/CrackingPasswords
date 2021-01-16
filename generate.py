@@ -10,7 +10,7 @@ f = open("Possible_output.txt","a")
 #         if len(generated)==int(x):
 #             f.write(generated + "\n")
 #             generated = ""
-for x in range(1,7):
+for x in range(8,9):
     generated=(''.join(i) for i in product(ascii_lowercase, repeat = x))
     for y in generated:
         f.write(y)
