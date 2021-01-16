@@ -1,2 +1,1 @@
 Process 1 has found password: aa.
-Total Lines Tried: 96 in 1.4039123058319092 seconds.

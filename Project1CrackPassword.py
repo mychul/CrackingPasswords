@@ -21,7 +21,7 @@ def crack(id,num,flag):
     encoded_salt=salt.encode()
     expected_hash= "bBkNBB2HVvMtCOMVnh5kN."
     for filename in os.listdir(truepath):
-        
+        start = time.time()
         if flag.value == 1:
             break
         with open(truepath + "\\" +filename,'r') as f:
@@ -97,11 +97,13 @@ def crack(id,num,flag):
                     w.close()
                     flag.value = 1
                     break
-        if os.path.exists(path+"\\"+ str(id) + "\\" +filename):
-            print("Process " + str(id) + " has finished with file. Deleting File: " + filename)
-            os.remove(path+"\\"+ str(id) + "\\" +filename)
-        else:
-            print("The file does not exist")    
+        if(flag.value == 0):
+            if os.path.exists(path+"\\"+ str(id) + "\\" +filename):
+                end = time.time()
+                print("Process " + str(id) + " has finished with file in " + str(end - start) + " seconds" + ". Deleting File: " + filename)
+                os.remove(path+"\\"+ str(id) + "\\" +filename)
+            else:
+                print("The file does not exist")    
             
 if __name__ == '__main__':
     start = time.time()
@@ -132,6 +134,6 @@ if __name__ == '__main__':
     end = time.time()
     print(str(end - start) + " seconds")
     print("Total Lines Tried: " + str(num.value))
-    w = open("result.txt",'a')
+    w = open(r"D:\Colege_Data\UCR DATA FOLDER\Winter 2021_DATA\CS 165\Project 1\Stats\stats.txt",'a')
     w.write("Total Lines Tried: " + str(num.value) + " in " + str(end - start) + " seconds.\n")
     w.close()
