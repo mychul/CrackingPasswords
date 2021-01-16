@@ -15,7 +15,7 @@ def finalization(h):
     return to64((h[0] << 16) | (h[6] << 8) | (h[12]), 4) + to64((h[1] << 16) | (h[7] << 8) | (h[13]), 4) + to64((h[2] << 16) | (h[8] << 8) | (h[14]), 4) + to64((h[3] << 16) | (h[9] << 8) | (h[15]), 4) + to64((h[4] << 16) | (h[10] << 8) | (h[5]), 4) + to64(h[11], 2)
 
 def crack(id,num,flag):
-    path = r"C:\Users\raoul\Documents\GitHub\CrackingPasswords\Files"
+    path = r"C:\Users\Hollow\Desktop\cs165\Project1-CrackingPasswords\CrackingPasswords\Files"
     truepath = path+"\\"+ str(id) 
     salt = "4fTgjp6q"
     encoded_salt=salt.encode()
